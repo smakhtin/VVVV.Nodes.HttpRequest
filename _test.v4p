@@ -1,0 +1,69 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\Smakhtin\Desktop\HttpGet\AdvancedHttp\_test.v4p" systemname="_test" filename="C:\Users\Smakhtin\Desktop\HttpGet\AdvancedHttp\_test.v4p">
+   <BOUNDS type="Window" left="5550" top="4695" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="HTTP (Network Request)" filename="bin\Debug\AdvancedHttp.dll" nodename="HTTP (Network Request)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="900" top="2325" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="URL" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="855" top="360" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="855" top="360" width="5145" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="|http://api.cosm.com/v2/feeds/504.json?datastreams=0,1,2|" encoded="0">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output String" dstnodeid="0" dstpinname="URL">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="900" top="3495" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="900" top="3495" width="2610" height="975">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Response" dstnodeid="2" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2160" top="1440" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2160" top="1440" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="X-ApiKey" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output String" dstnodeid="0" dstpinname="Header">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4110" top="1230" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4110" top="1230" width="3885" height="390">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="crdgU-4DpnrC86ScfEDYgWDDh3Mtf8bpk5ZyXfRDNuI" encoded="0">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output String" dstnodeid="0" dstpinname="Header Value">
+   </LINK>
+   </PATCH>
